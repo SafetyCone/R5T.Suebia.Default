@@ -9,7 +9,7 @@ namespace R5T.Suebia.Default
     /// Provides secrets file paths using a <see cref="ISecretsDirectoryPathProvider"/> service.
     /// Assumes that secrets files are in the secrets directory directly.
     /// </summary>
-    public class DefaultSecretsFilePathProvider
+    public class DefaultSecretsFilePathProvider : ISecretsFilePathProvider
     {
         public ISecretsDirectoryPathProvider SecretsDirectoryPathProvider { get; }
         public IStringlyTypedPathOperator StringlyTypedPathOperator { get; }
