@@ -11,14 +11,14 @@ namespace R5T.Suebia.Default
     public static class IServiceCollectionExtensions
     {
         /// <summary>
-        /// Adds the <see cref="DefaultSecretsFilePathProvider"/> implementation of <see cref="ISecretsFilePathProvider"/> as a <see cref="ServiceLifetime.Singleton"/>.
+        /// Adds the <see cref="DefaultSecretsDirectoryFilePathProvider"/> implementation of <see cref="ISecretsDirectoryFilePathProvider"/> as a <see cref="ServiceLifetime.Singleton"/>.
         /// </summary>
-        public static IServiceCollection AddDefaultSecretsFilePathProvider(this IServiceCollection services,
+        public static IServiceCollection AddDefaultSecretsDirectoryFilePathProvider(this IServiceCollection services,
             ServiceAction<ISecretsDirectoryPathProvider> addSecretsDirectoryPathProvider,
             ServiceAction<IStringlyTypedPathOperator> addStringlyTypedPathOperator)
         {
             services
-                .AddSingleton<ISecretsFilePathProvider, DefaultSecretsFilePathProvider>()
+                .AddSingleton<ISecretsDirectoryFilePathProvider, DefaultSecretsDirectoryFilePathProvider>()
                 .RunServiceAction(addSecretsDirectoryPathProvider)
                 .RunServiceAction(addStringlyTypedPathOperator)
                 ;
@@ -27,13 +27,13 @@ namespace R5T.Suebia.Default
         }
 
         /// <summary>
-        /// Adds the <see cref="DefaultSecretsFilePathProvider"/> implementation of <see cref="ISecretsFilePathProvider"/> as a <see cref="ServiceLifetime.Singleton"/>.
+        /// Adds the <see cref="DefaultSecretsDirectoryFilePathProvider"/> implementation of <see cref="ISecretsDirectoryFilePathProvider"/> as a <see cref="ServiceLifetime.Singleton"/>.
         /// </summary>
-        public static ServiceAction<ISecretsFilePathProvider> AddDefaultSecretsFilePathProviderAction(this IServiceCollection services,
+        public static ServiceAction<ISecretsDirectoryFilePathProvider> AddDefaultSecretsDirectoryFilePathProviderAction(this IServiceCollection services,
             ServiceAction<ISecretsDirectoryPathProvider> addSecretsDirectoryPathProvider,
             ServiceAction<IStringlyTypedPathOperator> addStringlyTypedPathOperator)
         {
-            var serviceAction = new ServiceAction<ISecretsFilePathProvider>(() => services.AddDefaultSecretsFilePathProvider(
+            var serviceAction = new ServiceAction<ISecretsDirectoryFilePathProvider>(() => services.AddDefaultSecretsDirectoryFilePathProvider(
                 addSecretsDirectoryPathProvider,
                 addStringlyTypedPathOperator));
             return serviceAction;
