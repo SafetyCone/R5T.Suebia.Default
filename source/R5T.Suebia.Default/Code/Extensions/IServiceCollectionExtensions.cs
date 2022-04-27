@@ -2,13 +2,14 @@
 
 using Microsoft.Extensions.DependencyInjection;
 
-using R5T.Dacia;
 using R5T.Lombardy;
+
+using R5T.T0063;
 
 
 namespace R5T.Suebia.Default
 {
-    public static class IServiceCollectionExtensions
+    public static partial class IServiceCollectionExtensions
     {
         /// <summary>
         /// Adds the <see cref="SecretsDirectoryFilePathProvider"/> implementation of <see cref="ISecretsDirectoryFilePathProvider"/> as a <see cref="ServiceLifetime.Singleton"/>.
@@ -18,25 +19,12 @@ namespace R5T.Suebia.Default
             IServiceAction<IStringlyTypedPathOperator> stringlyTypedPathOperatorAction)
         {
             services
+                .Run(secretsDirectoryPathProviderAction)
+                .Run(stringlyTypedPathOperatorAction)
                 .AddSingleton<ISecretsDirectoryFilePathProvider, SecretsDirectoryFilePathProvider>()
-                .RunServiceAction(secretsDirectoryPathProviderAction)
-                .RunServiceAction(stringlyTypedPathOperatorAction)
                 ;
 
             return services;
-        }
-
-        /// <summary>
-        /// Adds the <see cref="SecretsDirectoryFilePathProvider"/> implementation of <see cref="ISecretsDirectoryFilePathProvider"/> as a <see cref="ServiceLifetime.Singleton"/>.
-        /// </summary>
-        public static IServiceAction<ISecretsDirectoryFilePathProvider> AddSecretsDirectoryFilePathProviderAction(this IServiceCollection services,
-            IServiceAction<ISecretsDirectoryPathProvider> secretsDirectoryPathProviderAction,
-            IServiceAction<IStringlyTypedPathOperator> sringlyTypedPathOperatorAction)
-        {
-            var serviceAction = new ServiceAction<ISecretsDirectoryFilePathProvider>(() => services.AddSecretsDirectoryFilePathProvider(
-                secretsDirectoryPathProviderAction,
-                sringlyTypedPathOperatorAction));
-            return serviceAction;
         }
     }
 }

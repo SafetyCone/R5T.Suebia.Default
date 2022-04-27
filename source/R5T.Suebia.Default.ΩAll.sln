@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "R5T.Suebia.Default.Construc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "R5T.Suebia.Default.Testing", "R5T.Suebia.Default.Testing\R5T.Suebia.Default.Testing.csproj", "{C874B6EC-14A7-452C-8970-351E5A7F9CF1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Dependencies", "_Dependencies", "{B3BA9FFD-7B13-4EFF-9494-3C0E7D825A15}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "R5T.T0064", "..\..\R5T.T0064\source\R5T.T0064\R5T.T0064.csproj", "{8D4EAC4B-45D4-4983-929D-66F7F2021B29}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,5 +62,20 @@ Global
 		{C874B6EC-14A7-452C-8970-351E5A7F9CF1}.Release|x64.Build.0 = Release|Any CPU
 		{C874B6EC-14A7-452C-8970-351E5A7F9CF1}.Release|x86.ActiveCfg = Release|Any CPU
 		{C874B6EC-14A7-452C-8970-351E5A7F9CF1}.Release|x86.Build.0 = Release|Any CPU
+		{8D4EAC4B-45D4-4983-929D-66F7F2021B29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D4EAC4B-45D4-4983-929D-66F7F2021B29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D4EAC4B-45D4-4983-929D-66F7F2021B29}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8D4EAC4B-45D4-4983-929D-66F7F2021B29}.Debug|x64.Build.0 = Debug|Any CPU
+		{8D4EAC4B-45D4-4983-929D-66F7F2021B29}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8D4EAC4B-45D4-4983-929D-66F7F2021B29}.Debug|x86.Build.0 = Debug|Any CPU
+		{8D4EAC4B-45D4-4983-929D-66F7F2021B29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D4EAC4B-45D4-4983-929D-66F7F2021B29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D4EAC4B-45D4-4983-929D-66F7F2021B29}.Release|x64.ActiveCfg = Release|Any CPU
+		{8D4EAC4B-45D4-4983-929D-66F7F2021B29}.Release|x64.Build.0 = Release|Any CPU
+		{8D4EAC4B-45D4-4983-929D-66F7F2021B29}.Release|x86.ActiveCfg = Release|Any CPU
+		{8D4EAC4B-45D4-4983-929D-66F7F2021B29}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8D4EAC4B-45D4-4983-929D-66F7F2021B29} = {B3BA9FFD-7B13-4EFF-9494-3C0E7D825A15}
 	EndGlobalSection
 EndGlobal
